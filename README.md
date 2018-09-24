@@ -6,7 +6,13 @@ Trello API. There were two reasons this library was created:
 1. The standard Trello library required jQuery. I didn't want to load jQuery for just that one library.
 2. Most of the other Trello connection libraries are designed to use for node.js, not in a browser. 
 
-An additional feature of this library is that is include a disconnect function.
+This library assumes a browser connection authorized by Trello. The authorization 
+returns a token that is stored in localStorage to allow the connection to be
+persistent until a disconnection is specifically requested.
+
+An additional feature of this library is that it includes a disconnect function, unlike
+the standard Trello client library, which keeps the key in local storage, but
+has no way to remove it.
 
 When connected, the Trello token is stored in local storage. Disconnect clears that token.
 
