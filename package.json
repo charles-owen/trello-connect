@@ -1,6 +1,6 @@
 {
   "name": "trello-connect",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Lightweight client for connecting to Trello",
   "main": "dist/trello-connect.min.js",
   "module": "index.js",
