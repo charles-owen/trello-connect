@@ -48,7 +48,6 @@ export const TrelloConnect = function(options) {
 	 * Initialize.
 	 */
 	function initialize() {
-
 		// Till we know otherwise
 		that.state = TrelloConnect.DISCONNECTED;
 
@@ -63,7 +62,7 @@ export const TrelloConnect = function(options) {
 
 			const localStorage = window.localStorage;
 			localStorage.setItem(options.localPrefix + TokenStorage, token);
-			window.location = window.location.origin + window.location.pathname;
+			window.location = window.location.origin + window.location.pathname + window.location.search;
 		}
 
 		//
@@ -83,8 +82,9 @@ export const TrelloConnect = function(options) {
 	 * to this page after authorization with the token in the URL.
 	 */
 	this.authorize = function() {
+		const return_url = encodeURIComponent(window.location.href);
 		const url = `${options.authEndpoint}/${options.version}/authorize?expiration=never&name=${options.name}&` +
-			`callback_method=fragment&scope=read&response_type=token&key=${options.key}&return_url=${window.location.href}`;
+			`callback_method=fragment&scope=read&response_type=token&key=${options.key}&return_url=${return_url}`;
 		window.location = url;
 	}
 
