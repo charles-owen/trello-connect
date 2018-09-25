@@ -74,7 +74,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "f68f8f4210dc102785d5";
+/******/ 	var hotCurrentHash = "a5173c10aba85dd9f26e";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -859,8 +859,7 @@ var TrelloConnect = function TrelloConnect(options) {
    */
 
   function initialize() {
-    console.log('initialize'); // Till we know otherwise
-
+    // Till we know otherwise
     that.state = TrelloConnect.DISCONNECTED; //
     // See if there is a token in the current URL
     //
@@ -875,7 +874,7 @@ var TrelloConnect = function TrelloConnect(options) {
 
       _localStorage.setItem(options.localPrefix + TokenStorage, token);
 
-      window.location = window.location.origin + window.location.pathname;
+      window.location = window.location.origin + window.location.pathname + window.location.search;
     } //
     // Is there a token in local storage?
     //
@@ -898,7 +897,6 @@ var TrelloConnect = function TrelloConnect(options) {
 
   this.authorize = function () {
     var return_url = encodeURIComponent(window.location.href);
-    console.log(return_url);
     var url = "".concat(options.authEndpoint, "/").concat(options.version, "/authorize?expiration=never&name=").concat(options.name, "&") + "callback_method=fragment&scope=read&response_type=token&key=".concat(options.key, "&return_url=").concat(return_url);
     window.location = url;
   };
