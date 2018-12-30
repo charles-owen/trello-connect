@@ -92,6 +92,7 @@ export const TrelloConnect = function(options) {
 	 * Disconnect from Trello.
 	 *
 	 * This forgets the token in local storage.
+	 *
 	 */
 	this.disconnect = function() {
 		const localStorage = window.localStorage;
