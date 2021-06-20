@@ -1,18 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-<!-- <link rel="shortcut icon" href="../img/favicon.ico" /> -->
-<meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
-<title>Trello Connect</title>
-<script type="text/javascript" src="trello-connect.min.js"></script></head>
-<body>
-
-<div id="trello"></div>
-<div id="msg"></div>
-<div id="boards"></div>
-
-<script>
-  let trello = new TrelloConnect({
+<!doctype html><html><head><meta http-equiv="Content-type" content="text/html; charset=utf-8"/><title>Trello Connect</title><script defer="defer" src="trello-connect.min.js"></script></head><body><div id="trello"></div><div id="msg"></div><div id="boards"></div><script>let trello = new TrelloConnect({
     // Example API key.
     // Be sure to generate your own at https://trello.com/app-key
     key: "b85b7e772279099396653ddb564f426e",
@@ -67,10 +53,4 @@
         msg
       )
     });
-  }
-
-</script>
-
-</body>
-
-</html>
+  }</script></body></html>

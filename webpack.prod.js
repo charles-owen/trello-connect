@@ -8,11 +8,7 @@ module.exports = merge(common, {
     mode: 'production',
     optimization: {
         minimizer: [
-            new TerserPlugin({
-                cache: true,
-                parallel: true,
-                sourceMap: true  // Must be set to true if using source-maps in production
-            })
+            new TerserPlugin()
         ]
     },
     performance: {
